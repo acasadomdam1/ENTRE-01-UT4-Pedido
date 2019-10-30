@@ -2,6 +2,9 @@
 
 /**
  *  Representa a un cliente que hace un pedido 
+ *  
+ *  @author Aimar Casado
+ *  
  */
 public class Cliente
 {
@@ -13,7 +16,8 @@ public class Cliente
     /**
      * Constructor  
      */
-    public Cliente(String nombre, String direccion, String ciudad, String provincia)    {
+    public Cliente(String nombre, String direccion, String ciudad, String provincia)    
+    {
         this.nombre = nombre;
         this.direccion = direccion;
         this.ciudad = ciudad;
@@ -23,43 +27,55 @@ public class Cliente
     /**
      * accesor para el nombre del cliente
      */
-    public String getNombre() {
+    public String getNombre() 
+    {
         return nombre;
     }
 
     /**
      * accesor para la dirección del cliente
      */
-    public String getDireccion() {
+    public String getDireccion() 
+    {
         return direccion;
     }
 
     /**
      * accesor para la ciudad
      */
-    public String getCiudad() {
+    public String getCiudad() 
+    {
         return ciudad;
     }
 
     /**
      * accesor para la provincia
      */
-    public String getProvincia() {
+    public String getProvincia() 
+    {
         return provincia;
     }
 
     /**
      * representación textual del cliente
      */
-    public String toString() {
-         
-          
+    public String toString() 
+    {
+        String cadenaFormateada;
+        
+        cadenaFormateada = String.format("%10s: %-10s \n", "NOMBRE", nombre);
+        cadenaFormateada += String.format("%10s: %-10s \n", "DIRECCION", direccion);
+        cadenaFormateada += String.format("%10s: %-10s \n", "CIUDAD", ciudad);
+        cadenaFormateada += String.format("%10s: %-10s \n", "PROVINCIA", provincia);
+        
+        return cadenaFormateada;
     }
     
     /**
      * 
      */
-    public void print() {
+    public void print() 
+    {
         System.out.println(this.toString());
     }
 

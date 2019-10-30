@@ -1,6 +1,9 @@
 /**
  *  
  * Modela un producto. Todo producto tiene un nombre y un  precio unidad 
+ * 
+ * @author Aimar Casado
+ * 
  */
 public class Producto
 {
@@ -10,7 +13,8 @@ public class Producto
     /**
      * Constructor  
      */
-    public Producto(String nombre, double precio)    {
+    public Producto(String nombre, double precio)    
+    {
         this.nombre = nombre;
         this.precio = precio;
     }
@@ -18,30 +22,38 @@ public class Producto
     /**
      * accesor para el nombre del producto
      */
-    public String getNombre() {
+    public String getNombre() 
+    {
         return nombre;
     }
 
     /**
      * accesor para el precio unidad del producto
      */
-    public double getPrecio() {
+    public double getPrecio() 
+    {
         return precio;
     }
     
     /**
      * obtiene un nuevo producto copia idéntica del actual
      */
-    public         obtenerCopia() {
-         
+    public Producto obtenerCopia() 
+    {
+         return new Producto(nombre, precio);
     }
 
     /**
      * Representación textual de un producto
      * (ver enunciado)
      */
-    public String toString() {
+    public String toString() 
+    {
+        String cadenaFormateada;
         
+        cadenaFormateada = String.format("%30s | %8.2f€ unidad", nombre, precio);
+        
+        return cadenaFormateada;
     }
 
 }
